@@ -18,19 +18,18 @@ export function HomePage() {
   const [panel, setPanel] = useState<PanelId>(null);
   const closePanel = useCallback(() => setPanel(null), []);
 
-  const heroProject = archiveProjects.find((p) => p.id === "from-ashes");
+  const heroProject =
+    archiveProjects.find((p) => p.id === "from-ashes") ?? archiveProjects[0];
   const showcaseProjects = archiveProjects;
-  const heroFilm = heroProject
-    ? {
-        ...heroProject,
-        media: {
-          ...heroProject.media,
-          type: "video" as const,
-          src: "/projects/v4-cover.mp4?v=2",
-          poster: "/projects/v4-cover-poster.jpg?v=2",
-        },
-      }
-    : null;
+  const heroFilm = {
+    ...heroProject,
+    media: {
+      ...heroProject.media,
+      type: "video" as const,
+      src: "/projects/v4-cover.mp4?v=2",
+      poster: "/projects/v4-cover-poster.jpg?v=2",
+    },
+  };
 
   useEffect(() => {
     document.documentElement.classList.add("page-home");
@@ -53,8 +52,6 @@ export function HomePage() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [closePanel]);
-
-  if (!heroFilm) return null;
 
   return (
     <div

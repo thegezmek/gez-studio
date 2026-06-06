@@ -1,5 +1,7 @@
 import { HomePage } from "@/components/HomePage";
 
-export default function Page() {
+export const dynamic = "force-static";
+
+export default function HomePageRoute() {
   return <HomePage />;
 }
