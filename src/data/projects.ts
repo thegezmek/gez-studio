@@ -1,0 +1,291 @@
+import type { Project } from "@/types/project";
+
+/**
+ * Content aligned with gez.studio homepage & studio pages.
+ * Media: swap src/poster in /public/projects/ when assets are ready.
+ */
+export const projects: Project[] = [
+  {
+    id: "from-ashes",
+    title: "From Ashes I:",
+    subtitle: "Land of the Honey Bug",
+    formatLabel: "Docu-Series",
+    runtime: "73 mins",
+    category: "documentary-series",
+    country: "Türkiye",
+    description:
+      "After Türkiye's 2021 wildfires, an elderly beekeeper returns to his devastated village as a pine honey community struggles to preserve an ancient way of life.",
+    sourceDate: "May 4, 2023",
+    sourceUrl:
+      "https://lewislevent.com/projects/from-ashes-i-land-of-the-honey-bug",
+    trailerUrl: "/projects/from-ashes-preview.mp4",
+    href: "/projects/from-ashes",
+    featured: true,
+    layout: "hero",
+    media: {
+      type: "video",
+      src: "/projects/from-ashes-preview.mp4",
+      poster: "/projects/from-ashes-preview.jpg",
+      alt: "From Ashes I — Land of the Honey Bug",
+    },
+  },
+  {
+    id: "from-ashes-ii",
+    title: "From Ashes II:",
+    subtitle: "The Mountainside of Ormana",
+    formatLabel: "Docu-Series",
+    runtime: "55 mins",
+    category: "documentary-series",
+    country: "Türkiye",
+    description:
+      "During Türkiye's 2021 wildfires, a mountain village in Manavgat confronts an advancing inferno, where community resilience becomes a frontline defence.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/from-ashes/",
+    trailerUrl: "/projects/from-ashes-ii-trailer.mp4",
+    href: "/projects/from-ashes-ii",
+    featured: true,
+    layout: "hero",
+    media: {
+      type: "video",
+      src: "/projects/from-ashes-ii-trailer.mp4",
+      poster: "/projects/from-ashes-ii-trailer-poster.png",
+      alt: "From Ashes II — The Mountainside of Ormana",
+      autoplay: true,
+    },
+  },
+  {
+    id: "green-refuge",
+    title: "Green Refuge",
+    formatLabel: "Documentary",
+    runtime: "60 mins",
+    category: "documentary-series",
+    country: "India, Myanmar",
+    description:
+      "On the Indo-Myanmar border, displaced Zo communities and their Indigenous hosts rebuild livelihoods together through agroforestry.",
+    sourceUrl: "https://lewislevent.com/projects/green-refuge",
+    trailerUrl: "/projects/green-refuge-trailer.mp4",
+    href: "/projects/green-refuge",
+    featured: true,
+    layout: "hero",
+    media: {
+      type: "video",
+      src: "/projects/green-refuge-trailer.mp4",
+      poster: "/projects/green-refuge-poster.jpg",
+      alt: "Green Refuge — documentary",
+      autoplay: true,
+    },
+  },
+  {
+    id: "empower",
+    title: "Empower",
+    formatLabel: "Documentary",
+    runtime: "20 mins",
+    category: "documentary-series",
+    country: "India",
+    year: "2021–2025",
+    description:
+      "An indigenous artisan collective across the eight Northeastern states of India weaves peace silk, fostering resilience against human trafficking.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/empower/",
+    trailerUrl: "/projects/empower-trailer.mp4",
+    href: "/projects/empower",
+    featured: true,
+    layout: "hero",
+    media: {
+      type: "video",
+      src: "/projects/empower-trailer.mp4",
+      poster: "/projects/empower-trailer-poster.jpg",
+      alt: "Empower — documentary trailer",
+      autoplay: true,
+    },
+  },
+  {
+    id: "worldview-seaweed",
+    title: "Worldview Seaweed",
+    formatLabel: "Documentary",
+    runtime: "20 mins",
+    category: "experimental",
+    country: "Thailand",
+    year: "2023",
+    description:
+      "A story of seaweed, sustainability, and CO2 mitigation through a collaborative pilot uniting public and private sectors with Thai coastal communities.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/worldview-seaweed/",
+    trailerUrl: "/projects/worldview-seaweed-trailer.mp4",
+    href: "/projects/worldview-seaweed",
+    featured: true,
+    layout: "wide",
+    media: {
+      type: "video",
+      src: "/projects/worldview-seaweed-trailer.mp4",
+      poster: "/projects/worldview-seaweed-trailer-poster.jpg",
+      alt: "Worldview Seaweed — documentary",
+      autoplay: true,
+    },
+  },
+  {
+    id: "proteen",
+    title: "Proteen",
+    formatLabel: "Documentary",
+    runtime: "12 mins",
+    category: "feature-documentary",
+    country: "Africa",
+    year: "2023",
+    description:
+      "A journey with Proteen, transforming organic waste into Supercharged Fertilizer, revolutionizing farming in Africa with a circular system.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/proteen/",
+    trailerUrl: "/projects/proteen-trailer.mp4",
+    href: "/projects/proteen",
+    featured: true,
+    layout: "standard",
+    media: {
+      type: "video",
+      src: "/projects/proteen-trailer.mp4",
+      poster: "/projects/proteen-trailer-poster.jpg",
+      alt: "Proteen — documentary trailer",
+      autoplay: true,
+    },
+  },
+  {
+    id: "bon-aime",
+    title: "Bon Aime",
+    formatLabel: "Documentary",
+    runtime: "60 mins",
+    category: "feature-documentary",
+    country: "Uganda, Netherlands",
+    description:
+      "An Amsterdam-based DJ travels to Kampala, where spontaneous musical encounters become the foundation of a new record.",
+    sourceDate: "May 4, 2023",
+    href: "/projects/bon-aime",
+    featured: true,
+    layout: "standard",
+    media: {
+      type: "video",
+      src: "/projects/bon-aime-trailer.mp4",
+      poster: "/projects/bon-aime-poster.jpg",
+      alt: "Bon Aime — documentary",
+      autoplay: true,
+    },
+    trailerUrl: "/projects/bon-aime-trailer.mp4",
+  },
+  {
+    id: "kuzaya",
+    title: "Kuzaya",
+    formatLabel: "Documentary",
+    runtime: "60 mins",
+    category: "feature-documentary",
+    country: "Africa",
+    year: "2026",
+    description:
+      "Across East Africa, farmers, scientists, and agricultural innovators seek to restore soil fertility and reduce dependence on chemical inputs.",
+    sourceUrl: "https://lewislevent.com/projects/kuzaya",
+    href: "/projects/kuzaya",
+    comingSoon: true,
+    featured: true,
+    layout: "standard",
+    media: {
+      type: "video",
+      src: "/projects/kuzaya-trailer.mp4",
+      poster: "/projects/kuzaya-trailer-poster.png",
+      alt: "Kuzaya — documentary",
+      autoplay: true,
+    },
+    trailerUrl: "/projects/kuzaya-trailer.mp4",
+  },
+  {
+    id: "dynex",
+    title: "Dynex",
+    formatLabel: "Branded Film",
+    runtime: "22 mins",
+    category: "commercial",
+    country: "USA",
+    year: "2024",
+    description:
+      "The world's first documentary on neuromorphic quantum computing was showcased at the Guanajuato International Film Festival, presented by IDEA GTO in Leòn, Mexico, on July 20, 2024, by Dynex Co-Founder Daniela Herrmann.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/dynex/",
+    trailerUrl: "/projects/dynex-trailer.mp4",
+    href: "/projects/dynex",
+    featured: true,
+    layout: "wide",
+    media: {
+      type: "video",
+      src: "/projects/dynex-trailer.mp4",
+      poster: "/projects/dynex-trailer-poster.jpg",
+      alt: "Dynex — quantum computing documentary",
+      autoplay: true,
+    },
+  },
+  {
+    id: "kalpte-yasamak",
+    title: "Living in the Heart",
+    subtitle: "Kalpte Yaşamak",
+    formatLabel: "Biopic Documentary",
+    runtime: "8 mins",
+    category: "feature-documentary",
+    country: "Türkiye",
+    year: "2025",
+    description:
+      "A yogi and heart surgeon, wife and husband, co-author a book about what it means to live in the heart.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/living-in-the-heart/",
+    trailerUrl: "/projects/kalpte-yasamak-trailer.mp4",
+    href: "/projects/kalpte-yasamak",
+    layout: "standard",
+    media: {
+      type: "video",
+      src: "/projects/kalpte-yasamak-trailer.mp4",
+      poster: "/projects/kalpte-yasamak-trailer-poster.jpg",
+      alt: "Living in the Heart — Kalpte Yaşamak — trailer",
+      autoplay: true,
+    },
+  },
+  {
+    id: "voice-of-the-earth",
+    title: "Voice of the Earth",
+    formatLabel: "Music Video",
+    runtime: "7 mins",
+    category: "music-video",
+    country: "Amazon",
+    year: "2024",
+    description:
+      "A documentary-music journey uniting 13 indigenous community voices with orchestral worlds, including 'KAMINE NANA' from Raine Piyako's album.",
+    sourceDate: "May 4, 2023",
+    sourceUrl: "https://gez.studio/portfolio-item/voice-of-the-earth/",
+    trailerUrl: "/projects/voice-of-the-earth-trailer.mp4",
+    href: "/projects/voice-of-the-earth",
+    featured: true,
+    layout: "standard",
+    media: {
+      type: "video",
+      src: "/projects/voice-of-the-earth-trailer.mp4",
+      poster: "/projects/voice-of-the-earth-trailer-poster.jpg",
+      alt: "Voice of the Earth — trailer",
+      autoplay: true,
+    },
+  },
+];
+
+export const showcaseProjects = projects;
+
+export const BRANDED_SHORT_IDS = [
+  "kalpte-yasamak",
+  "empower",
+  "worldview-seaweed",
+  "proteen",
+  "dynex",
+  "voice-of-the-earth",
+] as const;
+
+export const archiveProjects = projects.filter(
+  (p) => !(BRANDED_SHORT_IDS as readonly string[]).includes(p.id),
+);
+
+export const brandedShorts = BRANDED_SHORT_IDS.map((id) =>
+  projects.find((p) => p.id === id),
+).filter((p): p is NonNullable<typeof p> => p != null);
+
+export function getProjectById(id: string) {
+  return projects.find((project) => project.id === id);
+}

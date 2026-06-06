@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1468.63 1378.26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        font-family: TTRamillasTrlVariableRoman, 'TT Ramillas Trl Variable Roman';
+        font-variation-settings: 'wght' 700;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #eaeaea;
+      }
+
+      .cls-4 {
+        font-size: 327.17px;
+      }
+
+      .cls-5 {
+        font-family: TTRamillasTrlVariableItalic-LightItalic, 'TT Ramillas Trl Variable Italic';
+        font-style: italic;
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-1" d="M504.83,617.12c-38.57,6.22-48.53,18.67-48.53,38.58,0,43.56,64.71,52.27,355.9,65.96l289.94,13.69c107.93,5.07,236.37,15.28,355.3,43.92v-222.99c-148.69,52.43-353.18,78.28-615.38,78.28-125.68,0-237.68-6.22-337.23-17.42Z"/>
+      <path class="cls-1" d="M216.13,586.01v-32.35C122.16,519.37,50.94,474.14,2.04,417.96v206.74c53.45-19.23,123.78-31.88,214.09-38.7Z"/>
+      <path class="cls-3" d="M216.13,553.65v32.35c-90.31,6.82-160.64,19.47-214.09,38.7v370.99h1455.39v-216.44c-118.92-28.64-247.37-38.85-355.3-43.92l-289.94-13.69c-291.19-13.69-355.9-22.4-355.9-65.96,0-19.91,9.96-32.35,48.53-38.58,99.55,11.2,211.55,17.42,337.23,17.42,262.19,0,466.68-25.84,615.38-78.28V0h-229.21c-14.55,204.66-185.18,366.17-393.54,366.17S455.69,204.66,441.14,0H2.04v417.96c48.9,56.17,120.12,101.41,214.09,135.69Z"/>
+    </g>
+    <text class="cls-4" transform="translate(0 1292.22)"><tspan class="cls-2" x="0" y="0">gez</tspan><tspan class="cls-5" x="518.88" y="0" xml:space="preserve"> studio</tspan></text>
+    <circle class="cls-3" cx="562.84" cy="1208.01" r="24.98"/>
+  </g>
+</svg>
