@@ -97,6 +97,7 @@ export const site = {
       {
         city: "Barcelona",
         timezone: "Europe/Madrid",
+        address: "Passatge de Cantí, 11, 3-2, 08005, Barcelona, Spain",
       },
     ],
   },
