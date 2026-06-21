@@ -125,7 +125,7 @@ export const team = [
   {
     name: "Ezgi Lemur",
     role: "Motion Designer & Animator",
-    photo: "/team/ezgi-lemur.jpg",
+    photo: "/team/ezgi-lemur-headshot.png",
     url: "https://www.instagram.com/ezgi.lemur/",
   },
   {
