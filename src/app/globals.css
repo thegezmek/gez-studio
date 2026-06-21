@@ -2534,6 +2534,7 @@ button.type-index {
   object-fit: cover;
   object-position: center 22%;
   border-radius: 50%;
+  filter: grayscale(100%);
   transition: opacity 0.3s ease;
 }
 

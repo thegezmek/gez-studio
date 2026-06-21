@@ -291,31 +291,40 @@ export function StudioPanel({ onClose }: StudioPanelProps) {
               {studio.team.description}
             </p>
             <ul className="studio-panel__team-grid">
-              {team.map((member) => (
+              {team.map((member) => {
+                const photo = (
+                  <span className="studio-panel__team-photo">
+                    <Image
+                      src={member.photo}
+                      alt=""
+                      width={240}
+                      height={240}
+                      className="studio-panel__team-photo-img"
+                      sizes="120px"
+                    />
+                  </span>
+                );
+
+                return (
                 <li
                   key={member.name}
                   className={`studio-panel__team-member${member.photo.includes("ilker-yurtcan") ? " studio-panel__team-member--ilker" : ""}`}
                 >
-                  <a
-                    href={member.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="studio-panel__team-photo-link"
-                    aria-label={`${member.name} — ${member.role} (opens in new tab)`}
-                    data-interactive
-                    data-cursor-play
-                  >
-                    <span className="studio-panel__team-photo">
-                      <Image
-                        src={member.photo}
-                        alt=""
-                        width={240}
-                        height={240}
-                        className="studio-panel__team-photo-img"
-                        sizes="120px"
-                      />
-                    </span>
-                  </a>
+                  {"url" in member && member.url ? (
+                    <a
+                      href={member.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="studio-panel__team-photo-link"
+                      aria-label={`${member.name} — ${member.role} (opens in new tab)`}
+                      data-interactive
+                      data-cursor-play
+                    >
+                      {photo}
+                    </a>
+                  ) : (
+                    <span className="studio-panel__team-photo-link">{photo}</span>
+                  )}
                   <div className="studio-panel__team-copy">
                     <span className="studio-panel__team-name">{member.name}</span>
                     <span className="studio-panel__team-role type-category">
@@ -323,7 +332,8 @@ export function StudioPanel({ onClose }: StudioPanelProps) {
                     </span>
                   </div>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </section>
 

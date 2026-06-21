@@ -129,6 +129,12 @@ export const team = [
     url: "https://www.instagram.com/ezgi.lemur/",
   },
   {
+    name: "İlkay Bilgiç",
+    role: "Producer",
+    photo: "/team/ilkay-bilgic-bw.jpg",
+    url: "https://www.instagram.com/ilkay.bilgic/",
+  },
+  {
     name: "İlker Yurtcan",
     role: "Music Composer",
     photo: "/team/ilker-yurtcan.png",
