@@ -107,7 +107,7 @@ export const team = [
   {
     name: "Lewis Levent",
     role: "Founder & Filmmaker",
-    photo: "/team/lewis-levent.jpg",
+    photo: "/team/lewis-levent-headshot.jpg",
     url: "https://lewislevent.com/",
   },
   {
