@@ -19,13 +19,3 @@ export function useMediaQuery(query: string, serverFallback = false) {
 export function usePrefersReducedMotion() {
   return useMediaQuery("(prefers-reduced-motion: reduce)");
 }
-
-export function usePrefersCoarsePointer() {
-  return useMediaQuery("(pointer: coarse)");
-}
-
-export function useCustomCursorEnabled() {
-  const coarse = usePrefersCoarsePointer();
-  const reduced = usePrefersReducedMotion();
-  return !coarse && !reduced;
-}

@@ -14,14 +14,21 @@ export interface ProjectCredit {
 export interface ProjectStill {
   src: string;
   alt: string;
-  /** Overlay cinematic letterbox bars (for full-frame source stills) */
-  letterbox?: boolean;
+  /** Source has black bars baked in; scale them out of frame */
+  crop?: boolean;
 }
 
 export interface ProjectTrailerEmbed {
-  provider: "vimeo";
+  provider: "vimeo" | "youtube" | "file";
   embedUrl: string;
   title: string;
+}
+
+export interface ProjectFeaturedVideo {
+  title: string;
+  runtime: string;
+  cover: string;
+  video: ProjectTrailerEmbed;
 }
 
 export interface ProjectDetail {
@@ -36,4 +43,5 @@ export interface ProjectDetail {
   stills: ProjectStill[];
   stillsTitle?: string;
   trailer?: ProjectTrailerEmbed;
+  musicVideos?: ProjectFeaturedVideo[];
 }

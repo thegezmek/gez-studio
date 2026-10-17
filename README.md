@@ -1,10 +1,10 @@
 # GEZ.STUDIO
 
-Film-first cinematic website for [gez.studio](https://gez.studio) — the wandering doc studio.
+Film production site for [gez.studio](https://gez.studio).
 
 ## Concept
 
-The homepage opens with a full-viewport hero film, then flows into a **film archive**: feature projects in a scroll-driven grid, editorial feature-films statement, and short films in a two-column archive. Studio and contact live in slide-in panels.
+The homepage opens with a full-frame film, then a film list, stills, and a studio note. Studio and contact are their own pages.
 
 ## Stack
 

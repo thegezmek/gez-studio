@@ -1,51 +1,18 @@
 export const site = {
   name: "gez.studio",
   legalName: "GEZ.STUDIO",
-  logos: {
-    icon: "/branding/gez-icon.svg",
-    horizontalWhite: "/branding/horizontal-white-gez-logo.svg",
+  company: {
+    name: "Gez Studio Ltd",
+    number: "13193161",
+    address: "128 City Rd, London EC1V 2NX, United Kingdom",
   },
-  tagline: "the wandering doc studio",
-  headline: "THE WANDERING DOC STUDIO",
-  pageTitle: "GEZ.STUDIO | The Wandering Doc Studio",
+  pageTitle: "GEZ.STUDIO | Film production",
   metaDescription:
-    "A production company creating feature documentaries, branded films and short-form storytelling for global audiences.",
+    "We tell stories through the lens of documentary realism, producing feature-length and short films for cinema, television and digital platforms. Curious by nature, we’re often on the road, capturing stories from across the world. Established in London, based in Barcelona.",
   description:
-    "Gez Studio is a nomadic documentary studio creating cinematic stories across culture, environment, and social change.",
-  mission: "Amplifying bold solutions for our changing planet.",
-  featureFilms: {
-    title: "Feature Films",
-    lead:
-      "Documentary productions for cinema, television and digital platforms, spanning original and commissioned projects.",
-  },
-  brandedShorts: {
-    title: "Short Films",
-    description:
-      "Short-form documentary, branded and music films for festivals, digital platforms and commissioned partners.",
-  },
-  brandedShortCategories: {
-    dynex: {
-      title: "Branded Film",
-      description:
-        "Commissioned films for organisations and innovators — cinematic storytelling shaped around brand purpose, product launches, and ideas that need room to breathe on screen.",
-    },
-    "kalpte-yasamak": {
-      title: "Short Films",
-      description:
-        "Compact documentary portraits and shorter-form work — intimate stories told with the same cinematic attention, distilled into a tighter frame.",
-    },
-    "voice-of-the-earth": {
-      title: "Music Video",
-      description:
-        "Music-driven visual work that merges performance, place, and narrative — expanding documentary form through sound, rhythm, and collaboration with artists and communities.",
-    },
-  },
+    "We tell stories through the lens of documentary realism, producing feature-length and short films for cinema, television and digital platforms. Curious by nature, we’re often on the road, capturing stories from across the world. Established in London, based in Barcelona.",
   studio: {
     title: "GEZ.STUDIO",
-    intro: [
-      "Gez Studio is an independent documentary film studio producing original and commissioned films across cinema, television and digital platforms.",
-      "Working internationally, we develop stories at the intersection of culture, environment and social change, combining field research with cinematic storytelling.",
-    ],
     founder: {
       label: "Founder",
       paragraphs: [
@@ -55,22 +22,20 @@ export const site = {
     },
     team: {
       label: "Team",
-      description:
-        "A multidisciplinary team of filmmakers, designers and storytellers working between the UK and Türkiye.",
     },
     production: {
       label: "What We Create",
       items: [
-        "Feature documentaries",
-        "Documentary series",
-        "Branded films",
-        "Music videos",
+        "Documentary",
+        "Biopic",
+        "Commercial",
+        "Branded film",
+        "Event",
+        "Music video",
       ],
     },
     collaborators: {
       label: "Selected Collaborators",
-      description:
-        "We've collaborated with broadcasters, NGOs, foundations, brands and production partners working across social and environmental impact.",
     },
   },
   url: "https://gez.studio",
@@ -82,17 +47,14 @@ export const site = {
   },
   contact: {
     heading: "Collaborations and distribution:",
+    intro:
+      "Whether it's a film, a collaboration, or just a conversation, we'd love to hear from you.",
     email: "hi@gez.studio",
     locations: [
       {
         city: "London",
         timezone: "Europe/London",
         address: "128 City Road, EC1V 2NX, United Kingdom",
-      },
-      {
-        city: "İstanbul",
-        timezone: "Europe/Istanbul",
-        address: "Kuzguncuk, Simitçi Tahir, 32, 34764, Türkiye",
       },
       {
         city: "Barcelona",
@@ -112,9 +74,15 @@ export const team = [
   },
   {
     name: "Selçuk Demirci",
-    role: "Creative Producer",
+    role: "Creative Producer / Filmmaker",
     photo: "/team/selcuk-demirci.jpg",
     url: "https://selchukdemirci.online/",
+  },
+  {
+    name: "İlkay Bilgiç",
+    role: "Producer",
+    photo: "/team/ilkay-bilgic-bw.jpg",
+    url: "https://www.instagram.com/ilkay.bilgic/",
   },
   {
     name: "Anthony Croft",
@@ -127,12 +95,6 @@ export const team = [
     role: "Motion Designer & Animator",
     photo: "/team/ezgi-lemur-headshot.png",
     url: "https://www.instagram.com/ezgi.lemur/",
-  },
-  {
-    name: "İlkay Bilgiç",
-    role: "Producer",
-    photo: "/team/ilkay-bilgic-bw.jpg",
-    url: "https://www.instagram.com/ilkay.bilgic/",
   },
   {
     name: "İlker Yurtcan",

@@ -7,12 +7,7 @@ export const fromAshesDetail: ProjectDetail = {
   id: "from-ashes",
   eyebrow: "From Ashes Part I:",
   headline: "Land of the Honey Bug",
-  synopsis: [
-    "Two months after the 2021 wildfires, Hüseyin, an elderly beekeeper, walks through his village in Muğla, where his home and the surrounding pine forests that sustained an ancient beekeeping tradition have been reduced to ash.",
-    "His return becomes an entry point into a community reckoning with what has been lost, as pine honey producers search for continuity in a landscape that no longer functions as it once did.",
-    "What now defines the future of their age-old practice is what locals call the honey bug, a small forest insect found almost nowhere else on Earth, upon which the entire pine honey system depends.",
-    "As beekeepers confront the fragility of this relationship, their story opens onto a wider reality, revealing how human actions, ecological imbalance, and a warming climate are reshaping the forests they depend on, and the future of a tradition that hangs in the balance.",
-  ],
+  synopsis: ["After the fires, a beekeeper returns to a vanished forest and an ancient tradition facing an uncertain future."],
   credits: [
     { label: "Director–Editor", value: "Lewis Levent" },
     {
@@ -21,7 +16,7 @@ export const fromAshesDetail: ProjectDetail = {
     },
     { label: "Executive Producer", value: "Julian Oliver" },
     { label: "Production Company", value: "Gez Studio" },
-    { label: "Year", value: "2021–2025" },
+    { label: "Year", value: "2021–2026" },
     { label: "Country", value: "Türkiye" },
     { label: "Language", value: "Turkish, English" },
     { label: "Runtime", value: "73 mins" },
@@ -32,7 +27,7 @@ export const fromAshesDetail: ProjectDetail = {
     return {
       src: `/projects/from-ashes-i/stills/new-${n}.png`,
       alt: `${stillAlt} ${index + 1}`,
-      letterbox: index >= 2 && index <= 5,
+      crop: [0, 1, 6, 7, 8].includes(index),
     };
   }),
   trailer: {

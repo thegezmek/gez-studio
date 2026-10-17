@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -11,21 +11,20 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  style: ["italic"],
-  weight: ["300"],
-  variable: "--font-v2-serif-fallback",
-  display: "swap",
-});
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#18181b",
+  themeColor: "#000000",
   colorScheme: "dark",
 };
+
+const shareImage = {
+  url: "/branding/gez-cover.png",
+  width: 1200,
+  height: 630,
+  alt: site.legalName,
+} as const;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -35,13 +34,13 @@ export const metadata: Metadata = {
   },
   description: site.metaDescription,
   keywords: [
-    "gez studio",
-    "wandering doc studio",
-    "documentary production",
-    "impact documentary",
-    "nomadic filmmaker",
-    "Lewis Ozcan",
-    "social impact film",
+    "GEZ Studio",
+    "film production",
+    "documentary",
+    "branded film",
+    "commercial",
+    "independent film",
+    "Barcelona",
   ],
   authors: [{ name: site.legalName, url: site.url }],
   creator: site.legalName,
@@ -52,23 +51,15 @@ export const metadata: Metadata = {
     siteName: site.legalName,
     title: site.pageTitle,
     description: site.metaDescription,
-    images: [
-      {
-        url: "/branding/gez-cover.png",
-        width: 1200,
-        height: 630,
-        alt: site.pageTitle,
-      },
-    ],
+    images: [shareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: site.pageTitle,
     description: site.metaDescription,
-    images: ["/branding/gez-cover.png"],
+    images: [shareImage.url],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: site.url },
 };
 
 export default function RootLayout({
@@ -79,9 +70,37 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${cormorant.variable} h-full`}
+      className={`${spaceGrotesk.variable} h-full`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="h-full font-sans text-bone antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: site.legalName,
+              url: site.url,
+              email: site.contact.email,
+              description: site.metaDescription,
+              logo: `${site.url}/branding/gez-cover.png`,
+              sameAs: [site.social.instagram, site.social.vimeo, site.social.linkedin],
+              address: site.contact.locations.map((location) => ({
+                "@type": "PostalAddress",
+                addressLocality: location.city,
+                streetAddress: location.address,
+              })),
+            }),
+          }}
+        />
         <AppProviders>{children}</AppProviders>
       </body>
     </html>

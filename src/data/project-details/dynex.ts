@@ -3,11 +3,10 @@ import type { ProjectDetail } from "@/types/project-detail";
 export const dynexDetail: ProjectDetail = {
   id: "dynex",
   headline: "Dynex",
-  synopsis: [
-    "The world's first documentary on neuromorphic quantum computing was showcased at the Guanajuato International Film Festival, presented by IDEA GTO in Leòn, Mexico, on July 20, 2024, by Dynex Co-Founder Daniela Herrmann.",
-  ],
+  synopsis: ["The world's first documentary on neuromorphic quantum computing, presented by Dynex co-founder Daniela Herrmann at the Guanajuato International Film Festival in Mexico, 2024."],
   credits: [
     { label: "Director–Editor", value: "Lewis Levent" },
+    { label: "Producer", value: "Daniela Herrmann" },
     { label: "Production Company", value: "Gez Studio" },
     { label: "Year", value: "2024" },
     { label: "Country", value: "USA" },

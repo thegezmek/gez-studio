@@ -122,7 +122,7 @@ const allCollaborators: CollaboratorLogo[] = [
   },
   {
     slug: "star-fun",
-    name: "star.",
+    name: "Star.fun",
     src: "/partners/star-fun.png",
     url: "https://star.fun/",
   },
@@ -152,7 +152,7 @@ const allCollaborators: CollaboratorLogo[] = [
   },
   {
     slug: "istanbul-university-cerrahpasa",
-    name: "Istanbul University-Cerrahpaşa",
+    name: "Istanbul University",
     src: "/partners/istanbul-university-cerrahpasa.png",
     url: "https://www.iuc.edu.tr/en/",
   },

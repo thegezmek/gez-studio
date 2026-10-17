@@ -1,6 +1,10 @@
 import type { ProjectDetail } from "@/types/project-detail";
+import { askindanOlmemeliDetail } from "./askindan-olmemeli";
+import { catalogueDetails } from "./catalogue-films";
 import { bonAimeDetail } from "./bon-aime";
 import { dynexDetail } from "./dynex";
+import { ebcDetail } from "./ebc";
+import { internetRoundsDetail } from "./internet-rounds";
 import { empowerDetail } from "./empower";
 import { fromAshesDetail } from "./from-ashes";
 import { fromAshesIiDetail } from "./from-ashes-ii";
@@ -22,8 +26,12 @@ export const orderedProjectDetails: ProjectDetail[] = [
   worldviewSeaweedDetail,
   proteenDetail,
   dynexDetail,
+  ebcDetail,
   kalpteYasamakDetail,
   voiceOfTheEarthDetail,
+  askindanOlmemeliDetail,
+  internetRoundsDetail,
+  ...catalogueDetails,
 ];
 
 const projectDetails: Record<string, ProjectDetail> = Object.fromEntries(
@@ -43,14 +51,19 @@ export interface ProjectNavigation {
   total: number;
 }
 
+/** Eyebrows ending in ":" are part of the title; others are category tags. */
+export function filmTitle(detail: ProjectDetail): string {
+  if (detail.navTitle) return detail.navTitle;
+  return detail.eyebrow?.trim().endsWith(":")
+    ? `${detail.eyebrow.trim()} ${detail.headline}`
+    : detail.headline;
+}
+
 function toNavItem(detail: ProjectDetail): ProjectNavItem {
-  const title =
-    detail.navTitle ??
-    (detail.eyebrow ? `${detail.eyebrow} ${detail.headline}` : detail.headline);
   return {
     id: detail.id,
     href: `/projects/${detail.id}`,
-    title,
+    title: filmTitle(detail),
   };
 }
 
