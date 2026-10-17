@@ -43,13 +43,13 @@ export const projects: Project[] = [
       "During Türkiye's 2021 wildfires, a mountain village in Manavgat confronts an advancing inferno, where community resilience becomes a frontline defence.",
     sourceDate: "May 4, 2023",
     sourceUrl: "https://gez.studio/portfolio-item/from-ashes/",
-    trailerUrl: "/projects/from-ashes-ii-trailer.mp4?v=4",
+    trailerUrl: "/projects/from-ashes-ii-trailer.mp4?v=5",
     href: "/projects/from-ashes-ii",
     featured: true,
     layout: "hero",
     media: {
       type: "video",
-      src: "/projects/from-ashes-ii-trailer.mp4?v=4",
+      src: "/projects/from-ashes-ii-trailer.mp4?v=5",
       poster: "/projects/from-ashes-ii-trailer-poster.jpg?v=4",
       alt: "From Ashes II — The Mountainside of Ormana",
       autoplay: true,
@@ -165,12 +165,12 @@ export const projects: Project[] = [
     layout: "standard",
     media: {
       type: "video",
-      src: "/projects/bon-aime-trailer.mp4?v=4",
+      src: "/projects/bon-aime-trailer.mp4?v=5",
       poster: "/projects/bon-aime-poster.jpg?v=5",
       alt: "Bon Aime — documentary",
       autoplay: true,
     },
-    trailerUrl: "/projects/bon-aime-trailer.mp4?v=4",
+    trailerUrl: "/projects/bon-aime-trailer.mp4?v=5",
   },
   {
     id: "kuzaya",
@@ -189,12 +189,12 @@ export const projects: Project[] = [
     layout: "standard",
     media: {
       type: "video",
-      src: "/projects/kuzaya-trailer.mp4?v=4",
+      src: "/projects/kuzaya-trailer.mp4?v=5",
       poster: "/projects/kuzaya-trailer-poster.jpg?v=6",
       alt: "Kuzaya — documentary",
       autoplay: true,
     },
-    trailerUrl: "/projects/kuzaya-trailer.mp4?v=4",
+    trailerUrl: "/projects/kuzaya-trailer.mp4?v=5",
   },
   {
     id: "dynex",
@@ -571,11 +571,11 @@ export const projects: Project[] = [
     layout: "wide",
     media: {
       type: "video",
-      src: "/projects/meshk.mp4",
+      src: "/projects/meshk.mp4?v=2",
       poster: "/projects/meshk-poster.jpg",
       alt: "Meshk",
     },
-    trailerUrl: "/projects/meshk.mp4",
+    trailerUrl: "/projects/meshk.mp4?v=2",
   },
   {
     id: "adamlar",
@@ -590,11 +590,11 @@ export const projects: Project[] = [
     layout: "wide",
     media: {
       type: "video",
-      src: "/projects/adamlar.mp4",
+      src: "/projects/adamlar.mp4?v=2",
       poster: "/projects/adamlar-poster.jpg",
       alt: "Adamlar",
     },
-    trailerUrl: "/projects/adamlar.mp4",
+    trailerUrl: "/projects/adamlar.mp4?v=2",
   },
 ];
 

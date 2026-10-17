@@ -116,7 +116,7 @@ export const catalogueDetails: ProjectDetail[] = [
     year: "2021",
     country: "Türkiye",
     runtime: "2 mins",
-    trailer: file("/projects/meshk.mp4", "Meshk"),
+    trailer: file("/projects/meshk.mp4?v=2", "Meshk"),
   }),
   film({
     id: "dynex-apollo",
@@ -211,6 +211,6 @@ export const catalogueDetails: ProjectDetail[] = [
     year: "2019",
     country: "Türkiye",
     runtime: "5 mins",
-    trailer: file("/projects/adamlar.mp4", "Adamlar"),
+    trailer: file("/projects/adamlar.mp4?v=2", "Adamlar"),
   }),
 ];
