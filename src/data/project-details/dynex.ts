@@ -10,7 +10,7 @@ export const dynexDetail: ProjectDetail = {
     { label: "Production Company", value: "Gez Studio" },
     { label: "Year", value: "2024" },
     { label: "Country", value: "USA" },
-    { label: "Runtime", value: "74 secs" },
+    { label: "Runtime", value: "22 mins" },
   ],
   stills: [],
   trailer: {

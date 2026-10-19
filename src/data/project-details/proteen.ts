@@ -15,7 +15,7 @@ export const proteenDetail: ProjectDetail = {
     { label: "Country", value: "Uganda" },
     { label: "Language", value: "English" },
     { label: "Partners", value: "Marula Proteen Ltd" },
-    { label: "Runtime", value: "20 mins" },
+    { label: "Runtime", value: "12 mins" },
   ],
   stillsTitle: "Film Stills",
   stills: makeStills("proteen", stillAlt),

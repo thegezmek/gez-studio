@@ -13,7 +13,7 @@ export const kuzayaDetail: ProjectDetail = {
     { label: "Executive Producer", value: "Tommie Hooft" },
     { label: "Production Company", value: "Gez Studio" },
     { label: "Year", value: "2026" },
-    { label: "Country", value: "Africa" },
+    { label: "Country", value: "East Africa" },
     { label: "Language", value: "English, Swahili, Kinyarwanda" },
     { label: "Runtime", value: "60 mins" },
   ],

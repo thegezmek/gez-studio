@@ -14,6 +14,7 @@ export const worldviewSeaweedDetail: ProjectDetail = {
     { label: "Year", value: "2023" },
     { label: "Country", value: "Thailand" },
     { label: "Language", value: "English, Thai" },
+    { label: "Runtime", value: "20 mins" },
     {
       label: "Partners",
       value: "Worldview International Foundation",

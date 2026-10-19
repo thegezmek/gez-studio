@@ -7,6 +7,8 @@ export const ebcDetail: ProjectDetail = {
   synopsis: ["A tour of the European Blockchain Convention in Barcelona with Angélica Márquez of Warmi Circle. IRL>URL."],
   credits: [
     { label: "Production Company", value: "Gez Studio" },
+    { label: "Year", value: "2026" },
+    { label: "Country", value: "Spain" },
     { label: "Runtime", value: "2 mins" },
   ],
   stills: [],

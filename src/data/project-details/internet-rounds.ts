@@ -12,6 +12,8 @@ export const internetRoundsDetail: ProjectDetail = {
     { label: "Motion Design", value: "Douglas Fullerton" },
     { label: "Partners", value: "Star.Fun" },
     { label: "Production Company", value: "Gez Studio" },
+    { label: "Year", value: "2026" },
+    { label: "Country", value: "Spain" },
     { label: "Runtime", value: "1 min" },
   ],
   stills: [],

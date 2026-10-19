@@ -74,7 +74,7 @@ export const team = [
   },
   {
     name: "Selçuk Demirci",
-    role: "Creative Producer / Filmmaker",
+    role: "Creative Director / Filmmaker",
     photo: "/team/selcuk-demirci.jpg",
     url: "https://selchukdemirci.online/",
   },
