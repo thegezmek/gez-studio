@@ -43,5 +43,7 @@ export interface ProjectDetail {
   stills: ProjectStill[];
   stillsTitle?: string;
   trailer?: ProjectTrailerEmbed;
+  /** Overrides the player's default "Watch the film" label */
+  trailerLabel?: string;
   musicVideos?: ProjectFeaturedVideo[];
 }

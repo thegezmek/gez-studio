@@ -9,7 +9,7 @@ import { archiveKind, yearOf } from "@/lib/film-meta";
 import type { Project } from "@/types/project";
 import type { ProjectCredit, ProjectDetail } from "@/types/project-detail";
 
-const DETAIL_LABELS = ["Production Company", "Year", "Country", "Language", "Runtime"];
+const DETAIL_LABELS = ["Production Company", "Year", "Country", "Language", "Runtime", "Locations"];
 
 function titleCase(value: string) {
   return value.toLowerCase().replace(/\b\w/g, (ch) => ch.toUpperCase());
@@ -71,6 +71,7 @@ export function ProjectDetailPage({ project, detail }: { project: Project; detai
         <FilmPlayer
           trailer={detail.trailer}
           cover={project.media.poster ?? (project.media.type === "image" ? project.media.src : undefined)}
+          {...(detail.trailerLabel ? { label: detail.trailerLabel } : {})}
         />
 
         {detail.synopsis.length > 0 ? (

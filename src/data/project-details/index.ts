@@ -11,12 +11,14 @@ import { fromAshesIiDetail } from "./from-ashes-ii";
 import { greenRefugeDetail } from "./green-refuge";
 import { kalpteYasamakDetail } from "./kalpte-yasamak";
 import { kuzayaDetail } from "./kuzaya";
+import { nothingDisappearsDetail } from "./nothing-disappears";
 import { proteenDetail } from "./proteen";
 import { voiceOfTheEarthDetail } from "./voice-of-the-earth";
 import { worldviewSeaweedDetail } from "./worldview-seaweed";
 
 /** Collection order for prev / next navigation on detail pages */
 export const orderedProjectDetails: ProjectDetail[] = [
+  nothingDisappearsDetail,
   fromAshesDetail,
   fromAshesIiDetail,
   greenRefugeDetail,
