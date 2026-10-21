@@ -32,10 +32,4 @@ export const nothingDisappearsDetail: ProjectDetail = {
       crop: false,
     };
   }),
-  trailer: {
-    provider: "file",
-    embedUrl: "/projects/nothing-disappears-teaser.mp4",
-    title: "Nothing Disappears — Teaser",
-  },
-  trailerLabel: "Watch the teaser",
 };
