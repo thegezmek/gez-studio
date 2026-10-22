@@ -188,10 +188,13 @@ export const projects: Project[] = [
     featured: true,
     layout: "standard",
     media: {
-      type: "image",
-      src: "/projects/nothing-disappears-poster.jpg",
+      type: "video",
+      src: "/projects/nothing-disappears-teaser.mp4",
+      poster: "/projects/nothing-disappears-poster.jpg",
       alt: "Nothing Disappears — documentary",
+      autoplay: true,
     },
+    trailerUrl: "/projects/nothing-disappears-teaser.mp4",
   },
   {
     id: "kuzaya",
