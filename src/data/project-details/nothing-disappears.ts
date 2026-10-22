@@ -12,7 +12,7 @@ export const nothingDisappearsDetail: ProjectDetail = {
     { label: "Director–Editor", value: "Selçuk Demirci" },
     { label: "Director of Photography", value: "Lewis Levent" },
     { label: "With", value: "Deniz Balkanlı" },
-    { label: "Production Support", value: "José Villanueva Guadalupe Martínez" },
+    { label: "Production Support", value: "José Guadalupe" },
     { label: "Production Company", value: "Gez Studio" },
     { label: "Year", value: "2026–" },
     { label: "Country", value: "Spain" },
