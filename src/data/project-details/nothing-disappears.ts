@@ -24,12 +24,6 @@ export const nothingDisappearsDetail: ProjectDetail = {
         "La Fageda d'en Jordà, Santa Margarida, Castellfollit de la Roca",
     },
   ],
-  trailer: {
-    provider: "file",
-    embedUrl: "/projects/nothing-disappears-teaser.mp4",
-    title: "Nothing Disappears — Teaser",
-  },
-  trailerLabel: "Watch the teaser",
   stills: Array.from({ length: 37 }, (_, index) => {
     const n = String(index + 1).padStart(2, "0");
     return {
