@@ -16,6 +16,17 @@ export function useMediaQuery(query: string, serverFallback = false) {
   );
 }
 
+const noopSubscribe = () => () => {};
+
+/** False while rendering on the server and during hydration, true afterwards. */
+export function useHydrated() {
+  return useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  );
+}
+
 export function usePrefersReducedMotion() {
   return useMediaQuery("(prefers-reduced-motion: reduce)");
 }

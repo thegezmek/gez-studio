@@ -6,7 +6,7 @@ import { DottedTurkiyeText } from "@/components/ui/DottedTurkiye";
 import { site } from "@/data/site";
 import type { Project } from "@/types/project";
 import { scrollPageToTop } from "@/lib/scroll-to-top";
-import { usePrefersReducedMotion, useMediaQuery } from "@/lib/use-media-query";
+import { usePrefersReducedMotion, useMediaQuery, useHydrated } from "@/lib/use-media-query";
 import { ARCHIVE_KINDS, archiveKind, yearOf, type ArchiveKind } from "@/lib/film-meta";
 
 interface HomeEditorialOpenProps {
@@ -347,6 +347,16 @@ function Opener({
 }) {
   const [active, setActive] = useState<string | null>(null);
   const tapToPreview = useMediaQuery("(max-width: 800px), ((hover: none) and (pointer: coarse))");
+  const portraitHero = useMediaQuery("(max-width: 700px) and (max-aspect-ratio: 4/5)");
+  const openerPoster = portraitHero
+    ? "/projects/v4-cover-mobile-poster.jpg?v=1"
+    : "/projects/v4-cover-poster.jpg?v=5";
+  const openerVideo = portraitHero
+    ? "/projects/v4-cover-mobile.mp4?v=2"
+    : "/projects/v4-cover.mp4?v=7";
+  // Only mount the video once the media query has been read on the client, so a
+  // phone never starts fetching the wide cut.
+  const videoReady = useHydrated();
 
   return (
     <div
@@ -359,10 +369,16 @@ function Opener({
     >
       <div className="home-opener__media">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/projects/v4-cover-poster.jpg?v=5" alt="" width={1920} height={1080} />
-        {reduceMotion ? null : (
+        <img
+          src={openerPoster}
+          alt=""
+          width={portraitHero ? 720 : 1920}
+          height={portraitHero ? 1556 : 1080}
+        />
+        {reduceMotion || !videoReady ? null : (
           <video
-            src="/projects/v4-cover.mp4?v=6"
+            key={openerVideo}
+            src={openerVideo}
             muted
             loop
             playsInline
