@@ -732,7 +732,7 @@ export function HomeEditorialOpen({ films }: HomeEditorialOpenProps) {
       <div className="home-editorial__split">
         <div className="home-editorial__statement">
           <p className="home-editorial__kicker">Independent & commissioned films</p>
-          <p className="home-editorial__line">The wandering film house.</p>
+          <p className="home-editorial__line">An exploration of narrative.</p>
           <p className="home-editorial__body">{site.description}</p>
           <Link href="/studio" className="home-editorial__meet" data-interactive>
             Meet GEZ Studio <span aria-hidden>→</span>
