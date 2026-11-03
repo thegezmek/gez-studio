@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/project-detail";
+import { makeStills } from "./helpers";
 
 export const internetRoundsDetail: ProjectDetail = {
   id: "internet-rounds",
@@ -6,7 +7,7 @@ export const internetRoundsDetail: ProjectDetail = {
   headline: "Internet Rounds",
   synopsis: ["star.fun announces Internet Rounds: the fastest and loudest way to raise money on the internet. Presented by co-founder Adam Bergeman, with his Mum and dog."],
   credits: [
-    { label: "Director–Editor", value: "Selçuk Demirci" },
+    { label: "Director", value: "Selçuk Demirci, Lewis Levent" },
     { label: "Cinematography", value: "Lewis Levent" },
     { label: "Producer", value: "Adam Bergeman" },
     { label: "Motion Design", value: "Douglas Fullerton" },
@@ -16,7 +17,8 @@ export const internetRoundsDetail: ProjectDetail = {
     { label: "Country", value: "Spain" },
     { label: "Runtime", value: "1 min" },
   ],
-  stills: [],
+  stillsTitle: "Film Stills",
+  stills: makeStills("internet-rounds", "Internet Rounds still", [], 12),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1235907270?h=fbbc63c05b",

@@ -4,11 +4,11 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Studio",
-  description: site.description,
+  description: site.about[0],
   alternates: { canonical: "/studio" },
   openGraph: {
     title: "Studio",
-    description: site.description,
+    description: site.about[0],
     url: "/studio",
     images: [{ url: "/branding/gez-cover.png", alt: site.legalName }],
   },

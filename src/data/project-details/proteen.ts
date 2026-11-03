@@ -18,7 +18,7 @@ export const proteenDetail: ProjectDetail = {
     { label: "Runtime", value: "12 mins" },
   ],
   stillsTitle: "Film Stills",
-  stills: makeStills("proteen", stillAlt),
+  stills: makeStills("proteen", stillAlt, [], 12),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/972957789",

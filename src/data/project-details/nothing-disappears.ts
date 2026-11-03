@@ -14,7 +14,7 @@ export const nothingDisappearsDetail: ProjectDetail = {
     { label: "With", value: "Deniz Balkanlı" },
     { label: "Production Support", value: "José Guadalupe" },
     { label: "Production Company", value: "Gez Studio" },
-    { label: "Year", value: "2026–" },
+    { label: "Year", value: "2026" },
     { label: "Country", value: "Spain" },
     { label: "Language", value: "English, Catalan, Spanish" },
     { label: "Runtime", value: "TBC" },

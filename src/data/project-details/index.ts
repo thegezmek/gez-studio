@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/project-detail";
+import { projectPath } from "@/lib/project-path";
 import { askindanOlmemeliDetail } from "./askindan-olmemeli";
 import { catalogueDetails } from "./catalogue-films";
 import { bonAimeDetail } from "./bon-aime";
@@ -64,7 +65,7 @@ export function filmTitle(detail: ProjectDetail): string {
 function toNavItem(detail: ProjectDetail): ProjectNavItem {
   return {
     id: detail.id,
-    href: `/projects/${detail.id}`,
+    href: projectPath(detail.id),
     title: filmTitle(detail),
   };
 }

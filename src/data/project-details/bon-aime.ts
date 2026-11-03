@@ -17,7 +17,7 @@ export const bonAimeDetail: ProjectDetail = {
     { label: "Runtime", value: "60 mins" },
   ],
   stillsTitle: "Film Stills",
-  stills: makeStills("bon-aime", stillAlt),
+  stills: makeStills("bon-aime", stillAlt, [], 12),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1171295662?h=9de8571bf5",

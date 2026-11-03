@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/project-detail";
+import { makeStills } from "./helpers";
 
 export const ebcDetail: ProjectDetail = {
   id: "ebc",
@@ -11,7 +12,8 @@ export const ebcDetail: ProjectDetail = {
     { label: "Country", value: "Spain" },
     { label: "Runtime", value: "2 mins" },
   ],
-  stills: [],
+  stillsTitle: "Film Stills",
+  stills: makeStills("ebc", "EBC still", [], 6),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1229585279?h=6f2d3ca375",

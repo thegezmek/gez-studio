@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/project-detail";
+import { makeStills } from "./helpers";
 
 export const voiceOfTheEarthDetail: ProjectDetail = {
   id: "voice-of-the-earth",
@@ -13,7 +14,8 @@ export const voiceOfTheEarthDetail: ProjectDetail = {
     { label: "Country", value: "Amazon" },
     { label: "Runtime", value: "3 mins 50 secs" },
   ],
-  stills: [],
+  stillsTitle: "Film Stills",
+  stills: makeStills("voice-of-the-earth", "Voice of the Earth still", [], 11),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1034632699",
@@ -33,7 +35,7 @@ export const voiceOfTheEarthDetail: ProjectDetail = {
     {
       title: "Nana",
       runtime: "7 mins 6 secs",
-      cover: "/projects/voice-of-the-earth-nana-poster.jpg?v=2",
+      cover: "/projects/voice-of-the-earth-nana-poster.jpg?v=3",
       video: {
         provider: "vimeo",
         embedUrl: "https://player.vimeo.com/video/1108895359?h=7235adde5b",

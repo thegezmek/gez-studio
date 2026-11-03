@@ -17,7 +17,7 @@ export const greenRefugeDetail: ProjectDetail = {
     { label: "Runtime", value: "60 mins" },
   ],
   stillsTitle: "Film Stills",
-  stills: makeStills("green-refuge", stillAlt),
+  stills: makeStills("green-refuge", stillAlt, [], 10),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1169157132?h=584ddef2c5",

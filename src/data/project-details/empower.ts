@@ -17,7 +17,7 @@ export const empowerDetail: ProjectDetail = {
     { label: "Runtime", value: "20 mins" },
   ],
   stillsTitle: "Film Stills",
-  stills: makeStills("empower", stillAlt),
+  stills: makeStills("empower", stillAlt, [], 11),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1068557433",

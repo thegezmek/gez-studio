@@ -9,17 +9,18 @@ export const site = {
   pageTitle: "GEZ.STUDIO | Film production",
   metaDescription:
     "We tell stories through the lens of documentary realism, producing feature-length and short films for cinema, television and digital platforms. Curious by nature, we’re often on the road, capturing stories from across the world. Established in London, based in Barcelona.",
+  /** Homepage statement */
   description:
-    "We tell stories through the lens of documentary realism, producing feature-length and short films for cinema, television and digital platforms. Curious by nature, we’re often on the road, capturing stories from across the world. Established in London, based in Barcelona.",
+    "We tell stories through the lens of documentary realism, producing feature-length and short films for cinema, television and digital platforms. Curious by nature, we’re\u00a0often on the road, capturing stories from across the world. Established in London, based in Barcelona.",
+  /** Studio bio copy, one entry per paragraph */
+  about: [
+    "Gez Studio is an independent film studio, established in London and now based in Barcelona, made up of a multi-disciplinary team of filmmakers and designers.",
+    "Digital natives who have mastered the oldest art form, storytelling, turning narrative design and development into film and multi-media work that captures the imagination of stakeholders and new audiences.",
+    "We make original films, and branded content for organisations, foundations, brands and founders.",
+    "Gez is Turkish for “wander”. We are natural explorers, working with clients around the world, on location and remotely. In the last five years, our productions have run in cities and rural areas across the USA, Latin America, East Africa, Europe, South and Southeast Asia.",
+  ],
   studio: {
     title: "GEZ.STUDIO",
-    founder: {
-      label: "Founder",
-      paragraphs: [
-        "Founded by British–Turkish filmmaker Lewis Levent, Gez Studio emerged from years spent documenting communities navigating environmental and social transformation.",
-        "From wildfire-affected villages in Türkiye to refugee settlements in the Eastern Himalayas and regenerative farming initiatives across Africa, the studio's work is grounded in long-term engagement with the people and places it documents.",
-      ],
-    },
     team: {
       label: "Team",
     },

@@ -9,7 +9,7 @@ export function makeStills(
   return Array.from({ length: count }, (_, index) => {
     const n = String(index + 1).padStart(2, "0");
     return {
-      src: `/projects/${slug}/stills/still-${n}.png`,
+      src: `/projects/${slug}/stills/still-${n}.jpg`,
       alt: `${altPrefix} ${index + 1}`,
       crop: cropIndices.includes(index),
     };

@@ -1,5 +1,6 @@
 "use client";
 
+import { getImageProps } from "next/image";
 import { useState } from "react";
 import type { ProjectTrailerEmbed } from "@/types/project-detail";
 
@@ -40,8 +41,21 @@ export function FilmPlayer({
   return (
     <div className="film-page__player">
       {cover ? (
+        // Served through the image optimizer so the browser gets a screen-sized WebP, not the source file.
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={cover} alt="" width={1920} height={1080} fetchPriority="high" />
+        <img
+          {...getImageProps({
+            src: cover,
+            alt: "",
+            width: 1920,
+            height: 1080,
+            quality: 85,
+            sizes: "100vw",
+            loading: "eager",
+          }).props}
+          alt=""
+          fetchPriority="high"
+        />
       ) : null}
       {trailer ? (
         <button

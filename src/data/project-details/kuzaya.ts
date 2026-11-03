@@ -18,7 +18,7 @@ export const kuzayaDetail: ProjectDetail = {
     { label: "Runtime", value: "60 mins" },
   ],
   stillsTitle: "Film Stills",
-  stills: makeStills("kuzaya", stillAlt),
+  stills: makeStills("kuzaya", stillAlt, [], 12),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1170298182?h=86b5767828",

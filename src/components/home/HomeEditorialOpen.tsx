@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { getImageProps } from "next/image";
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { DottedTurkiyeText } from "@/components/ui/DottedTurkiye";
+import { getProjectDetail } from "@/data/project-details";
+import { projectPath } from "@/lib/project-path";
 import { site } from "@/data/site";
 import type { Project } from "@/types/project";
 import { scrollPageToTop } from "@/lib/scroll-to-top";
@@ -22,31 +25,34 @@ type HomeStill = {
   crop?: boolean;
 };
 
+// Matches .home-frames__card: min(78vw, 18.5rem) on phones, clamp(17rem, 32vw, 34rem) above.
+const FRAME_SIZES = "(max-width: 800px) 78vw, 34rem";
+
 const HOME_STILLS: HomeStill[] = [
-  { href: "/projects/kuzaya", title: "Kuzaya", src: "/projects/kuzaya/stills/still-01.png" },
-  { href: "/projects/from-ashes", title: "From Ashes I", src: "/projects/from-ashes-i/stills/new-05.png" },
-  { href: "/projects/proteen", title: "Proteen", src: "/projects/proteen/stills/still-02.png" },
-  { href: "/projects/green-refuge", title: "Green Refuge", src: "/projects/green-refuge/stills/still-09.png" },
-  { href: "/projects/worldview-seaweed", title: "Worldview Seaweed", src: "/projects/worldview-seaweed/stills/still-08.png" },
-  { href: "/projects/bon-aime", title: "Bon Aimé", src: "/projects/bon-aime/stills/still-08.png" },
-  { href: "/projects/from-ashes-ii", title: "From Ashes II", src: "/projects/from-ashes-ii/stills/still-06.png" },
-  { href: "/projects/empower", title: "Empower", src: "/projects/empower/stills/still-09.png" },
-  { href: "/projects/green-refuge", title: "Green Refuge", src: "/projects/green-refuge/stills/still-02.png" },
-  { href: "/projects/from-ashes-ii", title: "From Ashes II", src: "/projects/from-ashes-ii/stills/still-08.png" },
-  { href: "/projects/kuzaya", title: "Kuzaya", src: "/projects/kuzaya/stills/still-08.png" },
-  { href: "/projects/from-ashes", title: "From Ashes I", src: "/projects/from-ashes-i/stills/new-02.png", crop: true },
-  { href: "/projects/empower", title: "Empower", src: "/projects/empower/stills/still-04.png" },
-  { href: "/projects/bon-aime", title: "Bon Aimé", src: "/projects/bon-aime/stills/still-02.png" },
-  { href: "/projects/proteen", title: "Proteen", src: "/projects/proteen/stills/still-09.png" },
-  { href: "/projects/worldview-seaweed", title: "Worldview Seaweed", src: "/projects/worldview-seaweed/stills/still-03.png" },
-  { href: "/projects/from-ashes", title: "From Ashes I", src: "/projects/from-ashes-i/stills/new-07.png", crop: true },
-  { href: "/projects/proteen", title: "Proteen", src: "/projects/proteen/stills/still-05.png" },
-  { href: "/projects/bon-aime", title: "Bon Aimé", src: "/projects/bon-aime/stills/still-07.png" },
-  { href: "/projects/from-ashes-ii", title: "From Ashes II", src: "/projects/from-ashes-ii/stills/still-03.png", crop: true },
-  { href: "/projects/empower", title: "Empower", src: "/projects/empower/stills/still-07.png" },
-  { href: "/projects/green-refuge", title: "Green Refuge", src: "/projects/green-refuge/stills/still-07.png" },
-  { href: "/projects/kuzaya", title: "Kuzaya", src: "/projects/kuzaya/stills/still-06.png" },
-  { href: "/projects/worldview-seaweed", title: "Worldview Seaweed", src: "/projects/worldview-seaweed/stills/still-06.png" },
+  { href: "/films/kuzaya", title: "Kuzaya", src: "/projects/kuzaya/stills/still-01.jpg" },
+  { href: "/films/from-ashes", title: "From Ashes I", src: "/projects/from-ashes-i/stills/still-01.jpg" },
+  { href: "/films/proteen", title: "Proteen", src: "/projects/proteen/stills/still-02.jpg" },
+  { href: "/films/green-refuge", title: "Green Refuge", src: "/projects/green-refuge/stills/still-04.jpg" },
+  { href: "/films/worldview-seaweed", title: "Worldview Seaweed", src: "/projects/worldview-seaweed/stills/still-08.jpg" },
+  { href: "/films/bon-aime", title: "Bon Aimé", src: "/projects/bon-aime/stills/still-04.jpg" },
+  { href: "/films/from-ashes-ii", title: "From Ashes II", src: "/projects/from-ashes-ii/stills/still-04.jpg" },
+  { href: "/films/empower", title: "Empower", src: "/projects/empower/stills/still-01.jpg" },
+  { href: "/films/askindan-olmemeli", title: "Aşkından Ölmemelİ", src: "/projects/askindan-olmemeli/stills/still-01.jpg" },
+  { href: "/films/voice-of-the-earth", title: "Voice of the Earth", src: "/projects/voice-of-the-earth/stills/still-01.jpg" },
+  { href: "/films/kuzaya", title: "Kuzaya", src: "/projects/kuzaya/stills/still-04.jpg" },
+  { href: "/films/from-ashes", title: "From Ashes I", src: "/projects/from-ashes-i/stills/still-10.jpg" },
+  { href: "/films/internet-rounds", title: "Internet Rounds", src: "/projects/internet-rounds/stills/still-01.jpg" },
+  { href: "/films/empower", title: "Empower", src: "/projects/empower/stills/still-04.jpg" },
+  { href: "/films/bon-aime", title: "Bon Aimé", src: "/projects/bon-aime/stills/still-02.jpg" },
+  { href: "/films/proteen", title: "Proteen", src: "/projects/proteen/stills/still-09.jpg" },
+  { href: "/films/worldview-seaweed", title: "Worldview Seaweed", src: "/projects/worldview-seaweed/stills/still-03.jpg" },
+  { href: "/films/from-ashes-ii", title: "From Ashes II", src: "/projects/from-ashes-ii/stills/still-07.jpg" },
+  { href: "/films/green-refuge", title: "Green Refuge", src: "/projects/green-refuge/stills/still-08.jpg" },
+  { href: "/films/askindan-olmemeli", title: "Aşkından Ölmemelİ", src: "/projects/askindan-olmemeli/stills/still-04.jpg" },
+  { href: "/films/kuzaya", title: "Kuzaya", src: "/projects/kuzaya/stills/still-10.jpg" },
+  { href: "/films/voice-of-the-earth", title: "Voice of the Earth", src: "/projects/voice-of-the-earth/stills/still-04.jpg" },
+  { href: "/films/from-ashes", title: "From Ashes I", src: "/projects/from-ashes-i/stills/still-13.jpg" },
+  { href: "/films/internet-rounds", title: "Internet Rounds", src: "/projects/internet-rounds/stills/still-07.jpg" },
 ];
 
 function isDocumentary(film: Project) {
@@ -57,46 +63,6 @@ function isDocumentary(film: Project) {
     !label.includes("commercial") &&
     !label.includes("biopic")
   );
-}
-
-function vimeoEmbed(url: string) {
-  const embed = new URL(url);
-  embed.searchParams.set("background", "1");
-  embed.searchParams.set("autoplay", "1");
-  embed.searchParams.set("muted", "1");
-  embed.searchParams.set("loop", "1");
-  embed.searchParams.set("autopause", "0");
-  embed.searchParams.set("controls", "0");
-  embed.searchParams.set("title", "0");
-  embed.searchParams.set("byline", "0");
-  embed.searchParams.set("portrait", "0");
-  embed.searchParams.set("dnt", "1");
-  return embed.toString();
-}
-
-const VIMEO_CROP: Record<string, number> = {
-  "internet-rounds": 1.2,
-  "askindan-olmemeli": 1.08,
-  ebc: 1.04,
-};
-
-function vimeoScale(id: string) {
-  return VIMEO_CROP[id] ?? 1;
-}
-
-function youtubeEmbed(url: string) {
-  const id = url.match(/embed\/([\w-]+)/)?.[1];
-  if (!id) return url;
-  const embed = new URL(`https://www.youtube-nocookie.com/embed/${id}`);
-  embed.searchParams.set("autoplay", "1");
-  embed.searchParams.set("mute", "1");
-  embed.searchParams.set("controls", "0");
-  embed.searchParams.set("loop", "1");
-  embed.searchParams.set("playlist", id);
-  embed.searchParams.set("modestbranding", "1");
-  embed.searchParams.set("playsinline", "1");
-  embed.searchParams.set("rel", "0");
-  return embed.toString();
 }
 
 function ToTop() {
@@ -138,7 +104,13 @@ function FrameStrip({ reduceMotion }: { reduceMotion: boolean }) {
   const dragDistance = useRef(0);
   const inertia = useRef(0);
   const holdAuto = useRef(0);
-  const pointer = useRef({ x: 0, y: 0, t: 0, horizontal: false, decided: false });
+  const pointer = useRef({
+    x: 0,
+    y: 0,
+    t: 0,
+    horizontal: false,
+    decided: false,
+  });
   const [grabbing, setGrabbing] = useState(false);
 
   useEffect(() => {
@@ -176,7 +148,10 @@ function FrameStrip({ reduceMotion }: { reduceMotion: boolean }) {
       inertia.current = 0;
       holdAuto.current = performance.now() + 900;
     };
-    viewport.addEventListener("wheel", onWheel, { passive: false, capture: true });
+    viewport.addEventListener("wheel", onWheel, {
+      passive: false,
+      capture: true,
+    });
 
     const tick = (now: number) => {
       const dt = Math.min(48, now - last);
@@ -298,10 +273,14 @@ function FrameStrip({ reduceMotion }: { reduceMotion: boolean }) {
               <span className="home-frames__media">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={still.src}
+                  {...getImageProps({
+                    src: still.src,
+                    alt: "",
+                    width: 1920,
+                    height: 1080,
+                    sizes: FRAME_SIZES,
+                  }).props}
                   alt=""
-                  width={1024}
-                  height={576}
                   draggable={false}
                   className={still.crop ? "is-letterbox" : undefined}
                   loading="lazy"
@@ -397,10 +376,15 @@ function Opener({
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={film.media.poster ?? film.media.src}
+            {...getImageProps({
+              src: film.media.poster ?? film.media.src,
+              alt: "",
+              width: 1920,
+              height: 1080,
+              quality: 85,
+              sizes: "100vw",
+            }).props}
             alt=""
-            width={1920}
-            height={1080}
           />
         </div>
       ))}
@@ -430,7 +414,7 @@ function Opener({
         {films.slice(0, OPENER_SPOTS.length).map((film, index) => (
           <Link
             key={film.id}
-            href={film.href ?? `/projects/${film.id}`}
+            href={film.href ?? projectPath(film.id)}
             className={`home-opener__film${tapToPreview && active === film.id ? " is-picked" : ""}`}
             style={OPENER_SPOTS[index]}
             data-interactive
@@ -503,101 +487,70 @@ function orderedArchive(films: Project[]) {
   return [...films].sort((a, b) => year(b) - year(a) || rank(a) - rank(b));
 }
 
-function ArchivePreview({ film, reduceMotion }: { film: Project; reduceMotion: boolean }) {
-  const [ready, setReady] = useState(false);
-  const vimeo = film.trailerUrl?.includes("player.vimeo.com") ? film.trailerUrl : null;
-  const youtube = film.trailerUrl?.includes("youtube.com/embed/") ? film.trailerUrl : null;
-  const showVimeo = !reduceMotion && Boolean(vimeo) && film.media.type !== "video";
-  const showYoutube = !reduceMotion && Boolean(youtube) && film.media.type !== "video";
+// Info panel opened by clicking a film row: log-line, director credit and a link.
+function TapInfo({ film }: { film: Project }) {
+  const detail = getProjectDetail(film.id);
+  const logline = detail?.synopsis[0] ?? film.description;
+  // Director, Director–Editor, Co-director… but not Director of Photography.
+  const directors =
+    detail?.credits.filter((credit) => /director/i.test(credit.label) && !/photography/i.test(credit.label)) ?? [];
+  const meta = [yearOf(film), archiveKind(film), film.country, film.runtime].filter(Boolean).join(" · ");
 
-  return (
-    <div className="home-archive__media">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={film.media.poster ?? film.media.src}
-        alt=""
-        width={1280}
-        height={720}
-        className={ready ? "is-hidden" : undefined}
-      />
-      {showVimeo && vimeo ? (
-        <iframe
-          className={`home-archive__frame${ready ? " is-ready" : ""}`}
-          src={vimeoEmbed(vimeo)}
-          title={film.title}
-          allow="autoplay; fullscreen; picture-in-picture"
-          style={{ transform: `scale(${vimeoScale(film.id)})` }}
-          onLoad={() => setReady(true)}
-        />
-      ) : null}
-      {showYoutube && youtube ? (
-        <iframe
-          className={`home-archive__frame${ready ? " is-ready" : ""}`}
-          src={youtubeEmbed(youtube)}
-          title={film.title}
-          allow="autoplay; fullscreen; picture-in-picture"
-          onLoad={() => setReady(true)}
-        />
-      ) : null}
-      {!reduceMotion && film.media.type === "video" ? (
-        <video
-          className={ready ? "is-ready" : undefined}
-          src={film.media.src}
-          muted
-          loop
-          playsInline
-          autoPlay
-          preload="metadata"
-          onPlaying={() => setReady(true)}
-        />
-      ) : null}
-    </div>
-  );
-}
-
-const PREVIEW_PAD = 20;
-const PREVIEW_W = 480;
-const PREVIEW_H = 320;
-
-function placeArchivePreview(node: HTMLElement, x: number, y: number) {
-  let left = x + PREVIEW_PAD;
-  let top = y + PREVIEW_PAD;
-  if (left + PREVIEW_W > window.innerWidth - PREVIEW_PAD) left = x - PREVIEW_PAD - PREVIEW_W;
-  if (top + PREVIEW_H > window.innerHeight - PREVIEW_PAD) top = y - PREVIEW_PAD - PREVIEW_H;
-  node.style.transform = `translate3d(${left}px, ${top}px, 0)`;
-}
-
-function TapStill({ film, reduceMotion }: { film: Project; reduceMotion: boolean }) {
   return (
     <div className="home-archive__tap">
-      <div className="home-archive__tap-still">
-        <ArchivePreview film={film} reduceMotion={reduceMotion} />
+      <div className="home-archive__tap-cover">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          {...getImageProps({
+            src: film.media.poster ?? film.media.src,
+            alt: "",
+            width: 1280,
+            height: 720,
+            sizes: "(max-width: 800px) 100vw, 28rem",
+          }).props}
+          alt=""
+        />
       </div>
-      <div className="home-archive__tap-go">
-        <Link href={film.href ?? `/projects/${film.id}`} data-interactive>
-          See project <span aria-hidden>→</span>
-        </Link>
+      <div className="home-archive__tap-body">
+        {logline ? (
+          <p className="home-archive__tap-logline">
+            <DottedTurkiyeText text={logline} />
+          </p>
+        ) : null}
+        <dl className="home-archive__tap-meta">
+          {directors.map((credit) => (
+            <div key={credit.label}>
+              <dt>{credit.label}</dt>
+              <dd>
+                <DottedTurkiyeText text={credit.value} />
+              </dd>
+            </div>
+          ))}
+          <div>
+            <dt>Details</dt>
+            <dd>
+              <DottedTurkiyeText text={meta} />
+            </dd>
+          </div>
+        </dl>
+        <div className="home-archive__tap-go">
+          <Link href={film.href ?? projectPath(film.id)} data-interactive>
+            See project <span aria-hidden>→</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
 
-function ArchiveList({ films, reduceMotion }: { films: Project[]; reduceMotion: boolean }) {
+function ArchiveList({ films }: { films: Project[] }) {
   const [filter, setFilter] = useState<"ALL" | ArchiveKind>("ALL");
   const [expanded, setExpanded] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const tapToPreview = useMediaQuery("(max-width: 800px), ((hover: none) and (pointer: coarse))");
-  const previewRef = useRef<HTMLSpanElement>(null);
-  const cursor = useRef({ x: 0, y: 0 });
+  // The panel that is animating shut; it stays mounted until its close animation ends.
+  const [closingId, setClosingId] = useState<string | null>(null);
   const ordered = orderedArchive(films);
   const visible = filter === "ALL" ? ordered : ordered.filter((film) => archiveKind(film) === filter);
-  const current = visible.find((film) => film.id === activeId) ?? null;
-
-  useEffect(() => {
-    const node = previewRef.current;
-    if (!node || !current) return;
-    placeArchivePreview(node, cursor.current.x, cursor.current.y);
-  }, [current]);
 
   return (
     <div className="home-archive">
@@ -612,6 +565,7 @@ function ArchiveList({ films, reduceMotion }: { films: Project[]; reduceMotion: 
               setFilter("ALL");
               setExpanded(false);
               setActiveId(null);
+              setClosingId(null);
             }}
           >
             All
@@ -626,6 +580,7 @@ function ArchiveList({ films, reduceMotion }: { films: Project[]; reduceMotion: 
                 setFilter(kind);
                 setExpanded(false);
                 setActiveId(null);
+                setClosingId(null);
               }}
             >
               {kind}
@@ -633,44 +588,20 @@ function ArchiveList({ films, reduceMotion }: { films: Project[]; reduceMotion: 
           ))}
         </div>
       </div>
-      <ul
-        className={`home-archive__list${expanded ? " is-open" : ""}`}
-        onMouseMove={(event) => {
-          if (tapToPreview) return;
-          cursor.current = { x: event.clientX, y: event.clientY };
-          if (previewRef.current) placeArchivePreview(previewRef.current, event.clientX, event.clientY);
-        }}
-        onMouseLeave={() => {
-          if (!tapToPreview) setActiveId(null);
-        }}
-      >
+      <ul className={`home-archive__list${expanded ? " is-open" : ""}`}>
         {visible.map((film) => (
-          <li
-            key={film.id}
-            onMouseEnter={(event) => {
-              if (tapToPreview) return;
-              cursor.current = { x: event.clientX, y: event.clientY };
-              setActiveId(film.id);
-            }}
-          >
+          <li key={film.id}>
             <Link
-              href={film.href ?? `/projects/${film.id}`}
+              href={film.href ?? projectPath(film.id)}
               className="home-archive__row"
               data-interactive
               data-active={film.id === activeId ? "true" : "false"}
+              aria-expanded={film.id === activeId}
               onClick={(event) => {
-                if (!tapToPreview) return;
+                // First click opens the info panel; the panel's "See project" link navigates.
                 event.preventDefault();
-                setActiveId(film.id);
-              }}
-              onFocus={(event) => {
-                if (tapToPreview) return;
-                const rect = event.currentTarget.getBoundingClientRect();
-                cursor.current = { x: rect.left + 24, y: rect.bottom };
-                setActiveId(film.id);
-              }}
-              onBlur={() => {
-                if (!tapToPreview) setActiveId(null);
+                setClosingId(activeId);
+                setActiveId(activeId === film.id ? null : film.id);
               }}
             >
               <span className="home-archive__title">
@@ -683,8 +614,17 @@ function ArchiveList({ films, reduceMotion }: { films: Project[]; reduceMotion: 
               </span>
               <span>{film.runtime}</span>
             </Link>
-            {tapToPreview && activeId === film.id ? (
-              <TapStill film={film} reduceMotion={reduceMotion} />
+            {activeId === film.id || closingId === film.id ? (
+              <div
+                className={`home-archive__tap-wrap${activeId === film.id ? "" : " is-closing"}`}
+                onAnimationEnd={(event) => {
+                  if (event.target === event.currentTarget && activeId !== film.id) setClosingId(null);
+                }}
+              >
+                <div className="home-archive__tap-clip">
+                  <TapInfo film={film} />
+                </div>
+              </div>
             ) : null}
           </li>
         ))}
@@ -698,11 +638,6 @@ function ArchiveList({ films, reduceMotion }: { films: Project[]; reduceMotion: 
         >
           See more <span aria-hidden>→</span>
         </button>
-      ) : null}
-      {current && !tapToPreview ? (
-        <span ref={previewRef} className="home-archive__preview" aria-hidden>
-          <ArchivePreview key={current.id} film={current} reduceMotion={reduceMotion} />
-        </span>
       ) : null}
     </div>
   );
@@ -741,7 +676,7 @@ export function HomeEditorialOpen({ films }: HomeEditorialOpenProps) {
       </div>
 
       <section className="home-editorial__catalog" id="films" aria-label="Films">
-        <ArchiveList films={films} reduceMotion={reduceMotion} />
+        <ArchiveList films={films} />
       </section>
 
       <section className="home-editorial__frames" aria-label="Stills">

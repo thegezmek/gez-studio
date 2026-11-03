@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { showcaseProjects } from "@/data/projects";
 import { site } from "@/data/site";
+import { projectPath } from "@/lib/project-path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url.replace(/\/$/, "");
@@ -25,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...showcaseProjects.map((project) => ({
-      url: `${base}/projects/${project.id}`,
+      url: `${base}${projectPath(project.id)}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,

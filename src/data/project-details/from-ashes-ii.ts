@@ -23,7 +23,7 @@ export const fromAshesIiDetail: ProjectDetail = {
     { label: "Runtime", value: "55 mins" },
   ],
   stillsTitle: "Film Stills",
-  stills: makeStills("from-ashes-ii", stillAlt, [0, 1, 2]),
+  stills: makeStills("from-ashes-ii", stillAlt, [], 11),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1101667778?h=9933555489",

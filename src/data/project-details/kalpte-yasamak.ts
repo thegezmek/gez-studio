@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/project-detail";
+import { makeStills } from "./helpers";
 
 export const kalpteYasamakDetail: ProjectDetail = {
   id: "kalpte-yasamak",
@@ -14,7 +15,8 @@ export const kalpteYasamakDetail: ProjectDetail = {
     { label: "Country", value: "Türkiye" },
     { label: "Runtime", value: "8 mins 42 secs" },
   ],
-  stills: [],
+  stillsTitle: "Film Stills",
+  stills: makeStills("kalpte-yasamak", "Kalpte Yaşamak still", [], 12),
   trailer: {
     provider: "vimeo",
     embedUrl: "https://player.vimeo.com/video/1070372582",

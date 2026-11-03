@@ -117,8 +117,9 @@ export function ProjectDetailPage({ project, detail }: { project: Project; detai
                 <Image
                   src={still.src}
                   alt={still.alt}
-                  width={1024}
-                  height={576}
+                  width={3840}
+                  height={2160}
+                  quality={85}
                   className={still.crop ? "is-letterbox" : undefined}
                   sizes={index % 3 === 0 ? "100vw" : "(max-width: 800px) 100vw, 50vw"}
                 />

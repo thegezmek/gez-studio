@@ -109,12 +109,6 @@ const allCollaborators: CollaboratorLogo[] = [
     url: "https://www4.fisheries.go.th/index.php/dof_en",
   },
   {
-    slug: "daily-nation",
-    name: "Daily Nation",
-    src: "/partners/daily-nation.png",
-    url: "https://www.nation.africa/",
-  },
-  {
     slug: "cgiar",
     name: "CGIAR",
     src: "/partners/cgiar.png",
@@ -125,12 +119,6 @@ const allCollaborators: CollaboratorLogo[] = [
     name: "Star.fun",
     src: "/partners/star-fun.png",
     url: "https://star.fun/",
-  },
-  {
-    slug: "biosorra",
-    name: "Biosorra",
-    src: "/partners/biosorra.png",
-    url: "https://www.biosorra.com/",
   },
   {
     slug: "holland-greentech",
@@ -161,12 +149,6 @@ const allCollaborators: CollaboratorLogo[] = [
     name: "University of Nairobi",
     src: "/partners/university-of-nairobi.png",
     url: "https://www.uonbi.ac.ke/",
-  },
-  {
-    slug: "turkiye-ari-yetistiricileri-merkez-birligi",
-    name: "Türkiye Arı Yetiştiricileri Merkez Birliği",
-    src: "/partners/turkiye-ari-yetistiricileri-merkez-birligi.png",
-    url: "https://www.tab.org.tr/",
   },
 ];
 
