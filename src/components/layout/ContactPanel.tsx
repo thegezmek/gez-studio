@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { EditorialFrame } from "@/components/layout/EditorialFrame";
 import { site } from "@/data/site";
 
@@ -29,6 +30,11 @@ export function ContactPage() {
             </svg>
             {site.contact.email}
           </a>
+          <p className="info-copy">
+            <Link href="/privacy" className="info-privacy" data-interactive>
+              Privacy
+            </Link>
+          </p>
         </header>
       </article>
 

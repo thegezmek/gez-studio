@@ -6086,6 +6086,67 @@ html.page-home .page-main--home {
   line-height: 1.45;
 }
 
+.privacy-terms {
+  max-width: 52rem;
+  margin: clamp(2.4rem, 6vh, 3.6rem) 0 0;
+  padding: 0;
+}
+
+.privacy-terms__row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) minmax(0, 1fr);
+  gap: 0.5rem clamp(1.25rem, 3vw, 2.5rem);
+  padding: 1.15rem 0;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+}
+
+.privacy-terms .info-label {
+  margin: 0.2rem 0 0;
+}
+
+.privacy-terms .info-copy {
+  margin: 0;
+}
+
+.privacy-terms a {
+  color: var(--bright);
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 0.3);
+  text-underline-offset: 0.2em;
+}
+
+.privacy-terms a:hover,
+.privacy-terms a:focus-visible {
+  color: rgb(255 255 255 / 0.62);
+}
+
+.info-privacy {
+  color: rgb(255 255 255 / 0.48);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.info-privacy:hover,
+.info-privacy:focus-visible {
+  color: var(--bright);
+}
+
+.privacy-updated {
+  margin: clamp(2.4rem, 6vh, 3.6rem) 0 0;
+  color: rgb(255 255 255 / 0.48);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .privacy-terms__row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .info-page .studio-panel__team-grid {
   justify-items: start;
   max-width: 54rem;
