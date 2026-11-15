@@ -182,7 +182,7 @@ export const projects: Project[] = [
     country: "Spain",
     year: "2026",
     description:
-      "Across La Garrotxa in Catalonia, you'll find a forest no one planted, a chapel in a crater, and a town built out of the cliff it stands on. It was all molten once.",
+      "Across La Garrotxa in Catalonia, you'll find a forest growing on stone, a chapel in a crater, and a town built out of the cliff it stands on. 13,000 years ago, it was all lava.",
     href: "/projects/nothing-disappears",
     comingSoon: true,
     featured: true,
